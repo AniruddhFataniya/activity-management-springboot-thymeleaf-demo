@@ -13,14 +13,15 @@
 	<artifactId>registration-login-spring-boot-security-thymeleaf</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>registration-login-spring-boot-security-thymeleaf</name>
+	<name>activity-management-springboot-thymeleaf-demo</name>
 	<description>Demo project for Spring Boot Thymeleaf and Hibernate </description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		
+		<!-- The main class to start by executing java -jar -->
+		<start-class>com.rudraksh.springboot.RegistrationLoginSpringBootSecurityThymeleafApplication</start-class>
 	</properties>
-	
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -33,6 +34,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		
 		<dependency>

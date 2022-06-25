@@ -4,7 +4,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -46,10 +46,11 @@ public class Activity{
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private CustomUser user;
 	
-	@NotNull(message = "is required")
+	@NotNull(message = "is required and should be of future")
 	@Column(name="deadline_date")
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
+	@Future
 	private Date deadLine;
 	
 	
